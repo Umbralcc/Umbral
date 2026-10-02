@@ -4,132 +4,207 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Umbral — Agencia de marketing</title>
-  <meta name="description" content="Umbral es una agencia de marketing que lleva a las marcas al siguiente nivel: estrategia, contenido, redes y performance.">
+  <meta name="description" content="Umbral es una agencia de marketing: estrategia de marca, redes sociales, publicidad digital, diseño y contenido.">
+  <meta name="theme-color" content="#0d0c0b">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="wrap">
-    <nav>
-      <a href="#" class="logo">Umbral<span>.</span></a>
+  <header class="nav">
+    <div class="wrap">
+      <a href="index.html" class="logo" aria-label="Umbral, inicio"><svg viewBox="0 0 18 24" fill="none" aria-hidden="true"><path d="M1.5 23V9a7.5 7.5 0 0 1 15 0v14" stroke="url(#lg)" stroke-width="1.6"/><path d="M0 23.2h18" stroke="#f6b26b" stroke-width="1.2"/><defs><linearGradient id="lg" x1="9" y1="0" x2="9" y2="24"><stop stop-color="#f6b26b"/><stop offset="1" stop-color="#e8643a"/></linearGradient></defs></svg>umbral</a>
       <ul>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#proceso">Proceso</a></li>
         <li><a href="portafolio.html">Portafolio</a></li>
-        <li><a href="#contacto">Contacto</a></li>
       </ul>
-    </nav>
+      <a href="https://wa.me/523319862529?text=Hola%20Umbral%2C%20me%20interesa%20hablar%20sobre%20un%20proyecto." class="btn btn-sm" target="_blank" rel="noopener">Hablemos</a>
+    </div>
+  </header>
 
-    <header class="hero">
-      <div class="eyebrow">Agencia de marketing</div>
-      <h1>Llevamos tu marca al <em>otro lado</em> del umbral.</h1>
-      <p>Estrategia, creatividad y datos para que tu marca deje de pasar desapercibida y empiece a ser elegida.</p>
-      <a href="#contacto" class="btn">Hablemos de tu proyecto →</a>
-    </header>
-  </div>
-
-  <div class="threshold"></div>
-
-  <div class="wrap">
-    <section id="nosotros" class="manifesto reveal">
-      <div class="label">Nosotros</div>
-      <p>Un umbral es ese punto exacto donde algo cambia. Donde una idea se convierte en marca y una marca, en referencia.</p>
-      <p>En Umbral acompañamos a negocios que están listos para dar ese paso, con un marketing claro, honesto y que se mide.</p>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <div class="eyebrow reveal">Agencia de marketing</div>
+          <h1 class="reveal d1">Cruza el <em>umbral</em>.</h1>
+          <p class="lead reveal d2">Estrategia, creatividad y datos para que tu marca deje de pasar desapercibida y empiece a ser elegida.</p>
+          <div class="actions reveal d3">
+            <a href="https://wa.me/523319862529?text=Hola%20Umbral%2C%20me%20interesa%20hablar%20sobre%20un%20proyecto." class="btn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.81 11.81 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></svg> Hablemos de tu proyecto</a>
+            <a href="portafolio.html" class="btn btn-ghost">Ver portafolio</a>
+          </div>
+        </div>
+        <div class="door reveal d2" aria-hidden="true"><div class="frame"></div><div class="spill"></div></div>
+      </div>
+      <div class="scroll-hint">Desliza</div>
     </section>
 
-    <section id="servicios">
-      <div class="reveal">
-        <div class="label">Servicios</div>
-        <h2>Todo lo que tu marca necesita para crecer.</h2>
-      </div>
-      <div class="services-grid">
-        <div class="service reveal">
-          <div class="num">01</div>
-          <h3>Estrategia de marca</h3>
-          <p>Posicionamiento, propuesta de valor y una voz que te distinga de la competencia.</p>
-        </div>
-        <div class="service reveal">
-          <div class="num">02</div>
-          <h3>Redes sociales</h3>
-          <p>Contenido con intención y gestión de comunidad para construir audiencia real.</p>
-        </div>
-        <div class="service reveal">
-          <div class="num">03</div>
-          <h3>Publicidad digital</h3>
-          <p>Campañas en Meta, Google y TikTok optimizadas para resultados, no para vanidad.</p>
-        </div>
-        <div class="service reveal">
-          <div class="num">04</div>
-          <h3>Diseño y contenido</h3>
-          <p>Identidad visual, fotografía, video y piezas que hacen que tu marca se recuerde.</p>
-        </div>
+    <div class="marquee" aria-hidden="true"><div class="track"><span>Estrategia de marca</span><span>Redes sociales</span><span>Publicidad digital</span><span>Diseño</span><span>Contenido</span><span>Fotografía y video</span><span>Estrategia de marca</span><span>Redes sociales</span><span>Publicidad digital</span><span>Diseño</span><span>Contenido</span><span>Fotografía y video</span></div></div>
+
+    <section id="nosotros" class="manifesto">
+      <div class="wrap">
+        <div class="label reveal">Nosotros</div>
+        <p class="big reveal d1">Un umbral es el punto exacto donde algo <em>cambia</em>. Donde una idea se vuelve marca, y una marca se vuelve <em>referencia</em>. <span class="dim">En Umbral acompañamos a negocios listos para dar ese paso, con un marketing claro, honesto y que se mide.</span></p>
       </div>
     </section>
 
-    <section class="teaser reveal">
-      <div>
-        <div class="label">Portafolio</div>
-        <h2>Marcas que ya cruzaron el umbral.</h2>
+    <section id="servicios" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="reveal">
+            <div class="label">Servicios</div>
+            <h2>Todo lo que tu marca necesita para <em>crecer</em>.</h2>
+          </div>
+          <p class="reveal d1">Un equipo, una estrategia y todos los canales trabajando en la misma dirección.</p>
+        </div>
+        <div class="services">
+          <div class="service reveal">
+            <div class="num">01</div>
+            <h3>Estrategia de marca</h3>
+            <p>Posicionamiento, propuesta de valor y una voz que te distinga de la competencia.</p>
+            <div class="tags"><span>Posicionamiento</span><span>Naming</span><span>Tono de voz</span></div>
+          </div>
+          <div class="service reveal d1">
+            <div class="num">02</div>
+            <h3>Redes sociales</h3>
+            <p>Contenido con intención y gestión de comunidad para construir una audiencia real.</p>
+            <div class="tags"><span>Instagram</span><span>TikTok</span><span>Community</span></div>
+          </div>
+          <div class="service reveal">
+            <div class="num">03</div>
+            <h3>Publicidad digital</h3>
+            <p>Campañas optimizadas para resultados, no para métricas de vanidad.</p>
+            <div class="tags"><span>Meta Ads</span><span>Google Ads</span><span>TikTok Ads</span></div>
+          </div>
+          <div class="service reveal d1">
+            <div class="num">04</div>
+            <h3>Diseño y contenido</h3>
+            <p>Identidad visual, fotografía, video y piezas que hacen que tu marca se recuerde.</p>
+            <div class="tags"><span>Identidad</span><span>Foto</span><span>Video</span></div>
+          </div>
+        </div>
       </div>
-      <a href="portafolio.html" class="btn btn-outline">Ver portafolio →</a>
     </section>
 
-    <section id="proceso">
-      <div class="reveal">
-        <div class="label">Proceso</div>
-        <h2>Simple, cercano y transparente.</h2>
+    <section id="portafolio" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="reveal">
+            <div class="label">Portafolio</div>
+            <h2>Marcas que ya cruzaron el <em>umbral</em>.</h2>
+          </div>
+          <a href="portafolio.html" class="btn btn-ghost reveal d1">Ver todo el portafolio →</a>
+        </div>
       </div>
-      <div class="steps">
-        <div class="step reveal">
-          <div class="num">1</div>
-          <h3>Escuchamos</h3>
-          <p>Entendemos tu negocio, tus objetivos y a las personas que quieres alcanzar.</p>
+    <div class="slider-wrap reveal">
+      <!--
+        Proyectos de ejemplo: cambia nombre, etiqueta, descripción y categoría (data-cat).
+        Para usar una foto real, reemplaza <div class="art …"></div> por:
+        <img src="img/mi-proyecto.jpg" alt="Descripción de la imagen">
+      -->
+      <div class="slider" aria-label="Proyectos" tabindex="0">
+        <article class="project" data-cat="marca diseno">
+          <div class="media"><div class="art p1" data-n="01"></div></div>
+          <div class="meta"><h3>Casa Ocre</h3><span class="tag">Branding</span></div>
+          <p>Identidad visual y voz de marca para un estudio de interiorismo.</p>
+        </article>
+        <article class="project" data-cat="redes">
+          <div class="media"><div class="art p2" data-n="02"></div></div>
+          <div class="meta"><h3>Brasa</h3><span class="tag">Redes sociales</span></div>
+          <p>Contenido y comunidad para un restaurante de cocina a la leña.</p>
+        </article>
+        <article class="project" data-cat="ads">
+          <div class="media"><div class="art p3" data-n="03"></div></div>
+          <div class="meta"><h3>Verde Raíz</h3><span class="tag">Publicidad</span></div>
+          <p>Campañas en Meta y Google para una tienda de plantas en línea.</p>
+        </article>
+        <article class="project" data-cat="diseno">
+          <div class="media"><div class="art p4" data-n="04"></div></div>
+          <div class="meta"><h3>Lumen</h3><span class="tag">Contenido</span></div>
+          <p>Fotografía, video y piezas para una clínica dermatológica.</p>
+        </article>
+        <article class="project" data-cat="redes ads">
+          <div class="media"><div class="art p5" data-n="05"></div></div>
+          <div class="meta"><h3>Miel &amp; Co.</h3><span class="tag">Redes + Ads</span></div>
+          <p>Lanzamiento de producto en TikTok e Instagram.</p>
+        </article>
+        <article class="project" data-cat="marca">
+          <div class="media"><div class="art p6" data-n="06"></div></div>
+          <div class="meta"><h3>Norte Studio</h3><span class="tag">Estrategia</span></div>
+          <p>Posicionamiento y propuesta de valor para un despacho de arquitectura.</p>
+        </article>
+      </div>
+      <div class="wrap">
+        <div class="slider-ui">
+          <span class="count">01 / 06</span>
+          <div class="progress"><i></i></div>
+          <div class="arrows">
+            <button data-prev aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <button data-next aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg></button>
+          </div>
         </div>
-        <div class="step reveal">
-          <div class="num">2</div>
-          <h3>Diseñamos</h3>
-          <p>Creamos una estrategia a medida con acciones concretas y metas claras.</p>
+      </div>
+    </div>
+    </section>
+
+    <section id="proceso" class="light">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="reveal">
+            <div class="label">Proceso</div>
+            <h2>Simple, cercano y <em>transparente</em>.</h2>
+          </div>
+          <p class="reveal d1">Sin letras chiquitas: sabes qué hacemos, cuándo y por qué.</p>
         </div>
-        <div class="step reveal">
-          <div class="num">3</div>
-          <h3>Hacemos crecer</h3>
-          <p>Ejecutamos, medimos y ajustamos cada mes para que los resultados no se detengan.</p>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="num">01</div>
+            <h3>Escuchamos</h3>
+            <p>Entendemos tu negocio, tus objetivos y a las personas que quieres alcanzar.</p>
+          </div>
+          <div class="step reveal d1">
+            <div class="num">02</div>
+            <h3>Diseñamos</h3>
+            <p>Creamos una estrategia a medida con acciones concretas y metas claras.</p>
+          </div>
+          <div class="step reveal d2">
+            <div class="num">03</div>
+            <h3>Hacemos crecer</h3>
+            <p>Ejecutamos, medimos y ajustamos cada mes para que los resultados no se detengan.</p>
+          </div>
         </div>
       </div>
     </section>
-  </div>
 
-  <div class="threshold"></div>
-
-  <div class="wrap">
-    <section id="contacto" class="cta reveal">
-      <div class="label">Contacto</div>
-      <h2>¿Listo para cruzar el <em>umbral</em>?</h2>
-      <p>Escríbenos por WhatsApp y cuéntanos sobre tu proyecto.</p>
-      <a href="https://wa.me/523319862529?text=Hola%20Umbral%2C%20me%20interesa%20hablar%20sobre%20un%20proyecto." class="btn" target="_blank" rel="noopener">WhatsApp · 33 1986 2529</a>
-    </section>
-
-    <footer>
-      <span>© <span id="year">2026</span> Umbral. Agencia de marketing.</span>
-      <div class="links">
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">TikTok</a>
+    <section id="contacto" class="cta">
+      <div class="glow"></div>
+      <div class="wrap reveal">
+        <div class="label">Contacto</div>
+        <h2>¿Listo para <em>cruzar</em>?</h2>
+        <p>Cuéntanos sobre tu marca por WhatsApp y te respondemos lo antes posible.</p>
+        <a href="https://wa.me/523319862529?text=Hola%20Umbral%2C%20me%20interesa%20hablar%20sobre%20un%20proyecto." class="btn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.81 11.81 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></svg> Escríbenos · 33 1986 2529</a>
       </div>
-    </footer>
-  </div>
+    </section>
+  </main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.15 });
-    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-  </script>
+  <footer>
+    <div class="wrap">
+      <div class="row">
+        <span>© <span data-year>2026</span> Umbral — Agencia de marketing</span>
+        <div class="links">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+      <div class="wordmark" aria-hidden="true">umbral</div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/523319862529?text=Hola%20Umbral%2C%20me%20interesa%20hablar%20sobre%20un%20proyecto." class="wa-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.81 11.81 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></svg></a>
+  <script src="main.js"></script>
 </body>
 </html>
