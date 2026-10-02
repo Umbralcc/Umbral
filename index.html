@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Umbral — Agencia de marketing</title>
+  <meta name="description" content="Umbral es una agencia de marketing que lleva a las marcas al siguiente nivel: estrategia, contenido, redes y performance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4f1ec;
+      --ink: #161514;
+      --muted: #6b665f;
+      --line: #d9d3c9;
+      --accent: #c2502b;
+      --card: #ebe6de;
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "Inter", system-ui, -apple-system, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121110;
+        --ink: #f1ede6;
+        --muted: #9a948b;
+        --line: #2c2a27;
+        --accent: #e0714b;
+        --card: #1b1a18;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 28px 0;
+    }
+    .logo { font-family: var(--serif); font-size: 24px; font-weight: 500; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    nav ul { list-style: none; display: flex; gap: 32px; font-size: 15px; color: var(--muted); }
+    nav ul a:hover { color: var(--ink); }
+
+    /* Hero */
+    .hero { padding: 14vh 0 12vh; position: relative; }
+    .eyebrow {
+      font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 28px;
+    }
+    h1 {
+      font-family: var(--serif); font-weight: 300;
+      font-size: clamp(44px, 8vw, 104px);
+      line-height: 1.02; letter-spacing: -0.035em;
+      max-width: 14ch;
+    }
+    h1 em { font-style: italic; color: var(--accent); }
+    .hero p {
+      margin-top: 36px; max-width: 46ch; color: var(--muted); font-size: 19px;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-top: 44px; padding: 16px 28px;
+      background: var(--ink); color: var(--bg);
+      border-radius: 999px; font-size: 15px; font-weight: 500;
+      transition: transform .25s ease, background .25s ease;
+    }
+    .btn:hover { background: var(--accent); transform: translateY(-2px); }
+
+    /* Threshold line */
+    .threshold {
+      height: 1px; background: var(--line); position: relative; overflow: hidden;
+    }
+    .threshold::after {
+      content: ""; position: absolute; inset: 0; width: 30%;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      animation: sweep 6s ease-in-out infinite;
+    }
+    @keyframes sweep { from { transform: translateX(-100%); } to { transform: translateX(340%); } }
+
+    /* Sections */
+    section { padding: 120px 0; }
+    .label {
+      font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 20px;
+    }
+    h2 {
+      font-family: var(--serif); font-weight: 300;
+      font-size: clamp(32px, 4.5vw, 56px); line-height: 1.1; letter-spacing: -0.025em;
+      max-width: 20ch;
+    }
+
+    .manifesto p {
+      font-family: var(--serif); font-weight: 300;
+      font-size: clamp(24px, 3vw, 36px); line-height: 1.35; letter-spacing: -0.015em;
+      max-width: 30ch;
+    }
+    .manifesto p + p { margin-top: 28px; color: var(--muted); }
+
+    .services-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      margin-top: 64px; border-top: 1px solid var(--line);
+    }
+    .service {
+      padding: 40px 40px 40px 0; border-bottom: 1px solid var(--line);
+    }
+    .service:nth-child(even) { padding: 40px 0 40px 40px; border-left: 1px solid var(--line); }
+    .service .num { font-family: var(--serif); color: var(--accent); font-size: 15px; }
+    .service h3 {
+      font-family: var(--serif); font-weight: 500; font-size: 26px;
+      letter-spacing: -0.01em; margin: 10px 0 10px;
+    }
+    .service p { color: var(--muted); max-width: 38ch; }
+
+    .steps {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 64px;
+    }
+    .step { background: var(--card); border-radius: 20px; padding: 36px 32px; }
+    .step .num {
+      font-family: var(--serif); font-size: 56px; font-weight: 300;
+      color: var(--accent); line-height: 1;
+    }
+    .step h3 { font-family: var(--serif); font-weight: 500; font-size: 24px; margin: 24px 0 8px; }
+    .step p { color: var(--muted); font-size: 16px; }
+
+    /* CTA */
+    .cta { text-align: center; padding: 160px 0; }
+    .cta h2 { margin: 0 auto; max-width: 16ch; font-size: clamp(38px, 6vw, 76px); }
+    .cta h2 em { font-style: italic; color: var(--accent); }
+    .cta p { color: var(--muted); margin-top: 24px; }
+
+    footer {
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+      padding: 32px 0 48px; font-size: 14px; color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+    footer .links { display: flex; gap: 24px; }
+    footer a:hover { color: var(--ink); }
+
+    /* Reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .threshold::after { animation: none; }
+    }
+
+    /* Responsive */
+    @media (max-width: 760px) {
+      body { font-size: 16px; }
+      .wrap { padding: 0 16px; }
+      nav ul { display: none; }
+      section { padding: 80px 0; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service, .service:nth-child(even) { padding: 32px 0; border-left: none; }
+      .steps { grid-template-columns: 1fr; }
+      .cta { padding: 110px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a href="#" class="logo">Umbral<span>.</span></a>
+      <ul>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero">
+      <div class="eyebrow">Agencia de marketing</div>
+      <h1>Llevamos tu marca al <em>otro lado</em> del umbral.</h1>
+      <p>Estrategia, creatividad y datos para que tu marca deje de pasar desapercibida y empiece a ser elegida.</p>
+      <a href="#contacto" class="btn">Hablemos de tu proyecto →</a>
+    </header>
+  </div>
+
+  <div class="threshold"></div>
+
+  <div class="wrap">
+    <section id="nosotros" class="manifesto reveal">
+      <div class="label">Nosotros</div>
+      <p>Un umbral es ese punto exacto donde algo cambia. Donde una idea se convierte en marca y una marca, en referencia.</p>
+      <p>En Umbral acompañamos a negocios que están listos para dar ese paso, con un marketing claro, honesto y que se mide.</p>
+    </section>
+
+    <section id="servicios">
+      <div class="reveal">
+        <div class="label">Servicios</div>
+        <h2>Todo lo que tu marca necesita para crecer.</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service reveal">
+          <div class="num">01</div>
+          <h3>Estrategia de marca</h3>
+          <p>Posicionamiento, propuesta de valor y una voz que te distinga de la competencia.</p>
+        </div>
+        <div class="service reveal">
+          <div class="num">02</div>
+          <h3>Redes sociales</h3>
+          <p>Contenido con intención y gestión de comunidad para construir audiencia real.</p>
+        </div>
+        <div class="service reveal">
+          <div class="num">03</div>
+          <h3>Publicidad digital</h3>
+          <p>Campañas en Meta, Google y TikTok optimizadas para resultados, no para vanidad.</p>
+        </div>
+        <div class="service reveal">
+          <div class="num">04</div>
+          <h3>Diseño y contenido</h3>
+          <p>Identidad visual, fotografía, video y piezas que hacen que tu marca se recuerde.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso">
+      <div class="reveal">
+        <div class="label">Proceso</div>
+        <h2>Simple, cercano y transparente.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="num">1</div>
+          <h3>Escuchamos</h3>
+          <p>Entendemos tu negocio, tus objetivos y a las personas que quieres alcanzar.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">2</div>
+          <h3>Diseñamos</h3>
+          <p>Creamos una estrategia a medida con acciones concretas y metas claras.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">3</div>
+          <h3>Hacemos crecer</h3>
+          <p>Ejecutamos, medimos y ajustamos cada mes para que los resultados no se detengan.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="threshold"></div>
+
+  <div class="wrap">
+    <section id="contacto" class="cta reveal">
+      <div class="label">Contacto</div>
+      <h2>¿Listo para cruzar el <em>umbral</em>?</h2>
+      <p>Cuéntanos sobre tu proyecto y te respondemos en menos de 48 horas.</p>
+      <a href="mailto:hola@umbral.com" class="btn">hola@umbral.com</a>
+    </section>
+
+    <footer>
+      <span>© <span id="year">2026</span> Umbral. Agencia de marketing.</span>
+      <div class="links">
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">TikTok</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
