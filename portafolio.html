@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portafolio — Umbral</title>
+  <meta name="description" content="Proyectos de Umbral, agencia de marketing: estrategia de marca, redes sociales, publicidad digital y diseño.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a href="index.html" class="logo">Umbral<span>.</span></a>
+      <ul>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#proceso">Proceso</a></li>
+        <li><a href="portafolio.html" class="active">Portafolio</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <header class="page-head">
+      <div class="eyebrow">Portafolio</div>
+      <h1>Marcas que ya cruzaron el <em>umbral</em>.</h1>
+      <p>Una selección de proyectos donde la estrategia, el contenido y los datos trabajaron juntos.</p>
+    </header>
+
+    <div class="filters" role="group" aria-label="Filtrar proyectos">
+      <button class="on" data-f="todos">Todos</button>
+      <button data-f="marca">Estrategia de marca</button>
+      <button data-f="redes">Redes sociales</button>
+      <button data-f="ads">Publicidad digital</button>
+      <button data-f="diseno">Diseño y contenido</button>
+    </div>
+
+    <!--
+      Para cada proyecto: cambia el título, la descripción y la categoría (data-cat).
+      Para usar una foto real, reemplaza <div class="art …">…</div> por:
+      <img src="img/mi-proyecto.jpg" alt="Descripción de la imagen">
+    -->
+    <div class="projects">
+      <article class="project reveal" data-cat="marca diseno">
+        <div class="media"><div class="art a1">Proyecto 01</div></div>
+        <div class="meta"><h3>Nombre del proyecto</h3><span class="tag">Branding</span></div>
+        <p>Breve descripción del reto del cliente y de lo que hicimos para resolverlo.</p>
+      </article>
+      <article class="project reveal" data-cat="redes">
+        <div class="media"><div class="art a2">Proyecto 02</div></div>
+        <div class="meta"><h3>Nombre del proyecto</h3><span class="tag">Redes sociales</span></div>
+        <p>Breve descripción del reto del cliente y de lo que hicimos para resolverlo.</p>
+      </article>
+      <article class="project reveal" data-cat="ads">
+        <div class="media"><div class="art a3">Proyecto 03</div></div>
+        <div class="meta"><h3>Nombre del proyecto</h3><span class="tag">Publicidad</span></div>
+        <p>Breve descripción del reto del cliente y de lo que hicimos para resolverlo.</p>
+      </article>
+      <article class="project reveal" data-cat="diseno">
+        <div class="media"><div class="art a4">Proyecto 04</div></div>
+        <div class="meta"><h3>Nombre del proyecto</h3><span class="tag">Contenido</span></div>
+        <p>Breve descripción del reto del cliente y de lo que hicimos para resolverlo.</p>
+      </article>
+      <article class="project reveal" data-cat="redes ads">
+        <div class="media"><div class="art a5">Proyecto 05</div></div>
+        <div class="meta"><h3>Nombre del proyecto</h3><span class="tag">Redes + Ads</span></div>
+        <p>Breve descripción del reto del cliente y de lo que hicimos para resolverlo.</p>
+      </article>
+      <article class="project reveal" data-cat="marca">
+        <div class="media"><div class="art a6">Proyecto 06</div></div>
+        <div class="meta"><h3>Nombre del proyecto</h3><span class="tag">Estrategia</span></div>
+        <p>Breve descripción del reto del cliente y de lo que hicimos para resolverlo.</p>
+      </article>
+    </div>
+  </div>
+
+  <div class="threshold"></div>
+
+  <div class="wrap">
+    <section id="contacto" class="cta reveal">
+      <div class="label">Contacto</div>
+      <h2>¿Tu marca es la <em>siguiente</em>?</h2>
+      <p>Escríbenos por WhatsApp y cuéntanos sobre tu proyecto.</p>
+      <a href="https://wa.me/523319862529?text=Hola%20Umbral%2C%20vi%20su%20portafolio%20y%20me%20interesa%20hablar%20sobre%20un%20proyecto." class="btn" target="_blank" rel="noopener">WhatsApp · 33 1986 2529</a>
+    </section>
+
+    <footer>
+      <span>© <span id="year">2026</span> Umbral. Agencia de marketing.</span>
+      <div class="links">
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">TikTok</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    const buttons = document.querySelectorAll(".filters button");
+    buttons.forEach((btn) => btn.addEventListener("click", () => {
+      buttons.forEach((b) => b.classList.toggle("on", b === btn));
+      const f = btn.dataset.f;
+      document.querySelectorAll(".project").forEach((p) => {
+        const show = f === "todos" || p.dataset.cat.split(" ").includes(f);
+        p.classList.toggle("hide", !show);
+        if (show) p.classList.add("in");
+      });
+    }));
+  </script>
+</body>
+</html>
