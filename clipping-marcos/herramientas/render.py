@@ -25,6 +25,15 @@ if layout == 'game':
     fc.append("[s3]crop=293:217:35:15,scale=380:282[pip]")
     fc.append("[top][bot]vstack[st];[st][pip]overlay=40:1300[lay]")
     wm_y = 1185
+elif layout == 'irl':
+    cw = int(spec.get('cw', 900)); cx = int(spec.get('cx', 960)); ch = 1030
+    x = max(0, min(1920 - cw, cx - cw // 2))
+    h = int(round(ch * 1080 / cw / 2) * 2); y = (1920 - h) // 2
+    fc.append("[vc]split=2[s1][s2]")
+    fc.append(f"[s2]scale=-2:480:flags=fast_bilinear,crop=270:480,boxblur=8:2,eq=brightness=-0.18,scale=1080:1920:flags=fast_bilinear[bg]")
+    fc.append(f"[s1]crop={cw}:{ch}:{x}:0,scale=1080:{h}:flags=lanczos[fg]")
+    fc.append(f"[bg][fg]overlay=0:{y}[lay]")
+    wm_y = 215
 else:
     fc.append("[vc]split=2[s1][s2]")
     fc.append("[s1]crop=610:634:200:0,scale=1080:1122:flags=lanczos[top]")
@@ -37,7 +46,7 @@ fc.append("[ac]loudnorm=I=-14:TP=-1.5:LRA=11[aout]")
 
 cmd = ['ffmpeg', '-loglevel', 'error', '-y', '-ss', str(t0), '-t', str(cuts[-1][1]-t0+1), '-i', src, '-i', wm,
        '-filter_complex', ';'.join(fc), '-map', '[vout]', '-map', '[aout]',
-       '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-r', '30',
+       '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-r', '30',
        '-c:a', 'aac', '-b:a', '160k', '-ar', '48000', '-movflags', '+faststart', out]
 subprocess.run(cmd, check=True)
 print('ok', out)

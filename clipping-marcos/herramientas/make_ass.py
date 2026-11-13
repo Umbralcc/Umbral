@@ -45,8 +45,10 @@ for a, b, w in words:
     if any(x <= a <= y for x, y in spec.get('drop', [])):
         continue
     ca, cb = to_clip(a), to_clip(b)
-    if ca is None or cb is None:
+    if ca is None:
         continue
+    if cb is None:  # la palabra empieza dentro del tramo pero acaba fuera: se recorta al final del tramo
+        cb = ca + 0.4
     for bad, good in spec.get('fix', {}).items():
         if re.sub(r'[^\wáéíóúñü]', '', w.lower()) == bad.lower():
             w = re.sub(re.escape(re.sub(r'[^\wáéíóúñüÁÉÍÓÚÑ]', '', w)), good, w) if re.sub(r'[^\wáéíóúñüÁÉÍÓÚÑ]', '', w) else good
@@ -67,6 +69,7 @@ def fmt(t):
     return f"{int(t//3600)}:{int(t%3600//60):02d}:{t%60:05.2f}"
 
 y = spec.get('y', 1040)
+hmv = spec.get('hook_mv', 190)
 head = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: 1080
@@ -76,7 +79,7 @@ WrapStyle: 0
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Sub,Inter Black,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,7,2,5,60,60,0,1
-Style: Hook,Inter Black,64,&H00FFFFFF,&H00FFFFFF,&H00000000,&HC8000000,1,0,0,0,100,100,0,0,3,18,0,8,70,70,190,1
+Style: Hook,Inter Black,64,&H00FFFFFF,&H00FFFFFF,&H00000000,&HC8000000,1,0,0,0,100,100,0,0,3,18,0,8,70,70,{hmv},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
