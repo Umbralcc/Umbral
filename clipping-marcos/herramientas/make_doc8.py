@@ -22,7 +22,7 @@ def dur(c):
     return sum(b - a for a, b in c['cuts'])
 
 D8_DAYS = [['D8-05', 'D8-12', 'D8-03'], ['D8-13', 'D8-08', 'D8-09'], ['D8-14', 'D8-02', 'D8-10'],
-           ['D8-01', 'D8-07', 'D8-15'], ['D8-06', 'D8-11', 'D8-04']]
+           ['D8-01', 'D8-07', 'D8-15'], ['D8-06', 'D8-11', 'D8-04'], ['D8-18', 'D8-17', 'D8-16']]
 rest7 = sorted([c for c in d7 if c['id'] not in PUBLISHED], key=lambda c: -c['score'])
 rest6 = sorted(d6, key=lambda c: -c['score'])
 days = [list(d) for d in D8_DAYS]
@@ -68,8 +68,8 @@ w('')
 
 w('## Calendario actualizado\n')
 w('**Ya publicados (no se repiten):** ' + ', '.join(PUBLISHED) + '.\n')
-w('- **Días 1-5:** los 15 clips del Directo 8 (3 al día), empezando por los más fuertes. **D8-13** (anuncia el directo de anécdotas "el sábado a las 9") va el día 2 para que salga **antes de ese sábado**.')
-w('- **Desde el día 6:** se intercalan los pendientes del 6 y del 7 (2 al día, de mayor a menor potencial) + **🆕 NUEVO DIRECTO** reservado para el mejor clip del directo que salga esa semana. Si no hay directo nuevo, se sube el siguiente pendiente y todo se corre un hueco.')
+w('- **Días 1-6:** los 18 clips del Directo 8 (3 al día), empezando por los más fuertes. **D8-13** (anuncia el directo de anécdotas "el sábado a las 9") va el día 2 para que salga **antes de ese sábado**.')
+w('- **Desde el día 7:** se intercalan los pendientes del 6 y del 7 (2 al día, de mayor a menor potencial) + **🆕 NUEVO DIRECTO** reservado para el mejor clip del directo que salga esa semana. Si no hay directo nuevo, se sube el siguiente pendiente y todo se corre un hueco.')
 w('- Cada clip, el mismo día en TikTok, Reels y Shorts. Horas: **[PENDIENTE]**; seguimos probando mediodía / tarde / noche.')
 w('- **D7-15** (anuncia una "rueda de prensa") y **D6-07** (planes de verano): comprobad con Marcos que siguen en pie antes de subirlos.\n')
 w('| Día | 1º (mediodía) | 2º (tarde) | 3º (noche) |\n|---|---|---|---|')
