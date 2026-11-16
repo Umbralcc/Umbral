@@ -26,13 +26,27 @@ if layout == 'game':
     fc.append("[top][bot]vstack[st];[st][pip]overlay=40:1300[lay]")
     wm_y = 1185
 elif layout == 'irl':
-    cw = int(spec.get('cw', 900)); cx = int(spec.get('cx', 960)); ch = 1030
-    x = max(0, min(1920 - cw, cx - cw // 2))
+    cw = int(spec.get('cw', 900)); cx = int(spec.get('cx', 960)); ch = int(spec.get('ch', 1030))
+    x = max(0, min(int(spec.get('srcw', 1920)) - cw, cx - cw // 2))
     h = int(round(ch * 1080 / cw / 2) * 2); y = (1920 - h) // 2
     fc.append("[vc]split=2[s1][s2]")
     fc.append(f"[s2]scale=-2:480:flags=fast_bilinear,crop=270:480,boxblur=8:2,eq=brightness=-0.18,scale=1080:1920:flags=fast_bilinear[bg]")
     fc.append(f"[s1]crop={cw}:{ch}:{x}:0,scale=1080:{h}:flags=lanczos[fg]")
     fc.append(f"[bg][fg]overlay=0:{y}[lay]")
+    wm_y = 215
+elif layout == 'stack':
+    # cámaras de Discord apiladas: regions = [[x, y, w, h], ...] en píxeles del vídeo original
+    regs = spec['regions']; n2 = len(regs)
+    hs = [int(round(h * 1080 / w / 2) * 2) for (_, _, w, h) in regs]
+    gap = 12; tot = sum(hs) + gap * (n2 - 1); y0 = max(360, (1920 - tot) // 2)
+    fc.append(f"[vc]split={n2 + 1}[bgs]" + ''.join(f"[r{i}]" for i in range(n2)))
+    fc.append("[bgs]scale=-2:480:flags=fast_bilinear,crop=270:480,boxblur=8:2,eq=brightness=-0.25,scale=1080:1920:flags=fast_bilinear[l0]")
+    yy = y0
+    for i, ((x, y, w, h), hh) in enumerate(zip(regs, hs)):
+        fc.append(f"[r{i}]crop={w}:{h}:{x}:{y},scale=1080:{hh}:flags=lanczos[t{i}]")
+        fc.append(f"[l{i}][t{i}]overlay=0:{yy}[l{i + 1}]")
+        yy += hh + gap
+    fc.append(f"[l{n2}]null[lay]")
     wm_y = 215
 else:
     fc.append("[vc]split=2[s1][s2]")

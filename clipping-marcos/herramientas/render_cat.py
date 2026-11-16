@@ -12,8 +12,9 @@ os.makedirs(outdir, exist_ok=True)
 for c in ns['CLIPS']:
     if only and c['id'] not in only:
         continue
-    spec = dict(layout='irl', cw=c['cw'], cx=c['cx'], cuts=c['cuts'], hook=c['hook'], hook_dur=3.2,
-                hook_mv=380, y=1450, hl=c.get('hl') or [w for w in re.findall(r'\w+', c['hook'].lower().replace('\\n', ' ')) if len(w) >= 5 or w.isdigit()], fix=c.get('fix', {}),
+    spec = dict(layout=c.get('layout', 'irl'), cw=c.get('cw', 900), cx=c.get('cx', 960), ch=c.get('ch', 1030),
+                srcw=c.get('srcw', 1920), regions=c.get('regions'), cuts=c['cuts'], hook=c['hook'], hook_dur=3.2,
+                hook_mv=c.get('hook_mv', 380), y=c.get('y', 1450), hl=c.get('hl') or [w for w in re.findall(r'\w+', c['hook'].lower().replace('\\n', ' ')) if len(w) >= 5 or w.isdigit()], fix=c.get('fix', {}),
                 replace_at=c.get('replace_at', []), drop=c.get('drop', []))
     sp = os.path.join(outdir, c['id'] + '.json'); json.dump(spec, open(sp, 'w'), ensure_ascii=False)
     ass = os.path.join(outdir, c['id'] + '.ass')
