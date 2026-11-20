@@ -1,0 +1,1 @@
+{"layout": "game", "cuts": [[4796.7, 4821.6], [4836.2, 4852.5]], "hook": "EL MONSTRUO SE PONE A 4\\NPARA PASAR POR LAS PUERTAS", "hook_dur": 3.2, "y": 1000, "hl": ["4", "puerta", "carpintería", "carpintanaria", "flipas"], "fix": {"esta": "está", "ahi": "ahí"}, "replace_at": [[4810.1, 4810.9, "¡Oh!"], [4817.1, 4817.5, "ay, qué rico"]], "drop": [[4821.6, 4836.0]]}
